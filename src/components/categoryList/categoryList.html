@@ -1,0 +1,22 @@
+<div class="tabs-wrap">
+    <ion-segment class='tabs-box' [(ngModel)]='lookType'  (ionChange)="segmentChanged($event)">
+        <ion-segment-button value='lookin' class='ion-segment-button' isActive>
+        关注
+        </ion-segment-button>
+        <ion-segment-button value='owned'  class='ion-segment-button'>
+        独家
+        </ion-segment-button>
+        <ion-segment-button value='recommend'  class='ion-segment-button'>
+        推荐
+        </ion-segment-button>
+        <ion-segment-button value='newer'  class='ion-segment-button'>
+        新人
+        </ion-segment-button>
+        <ion-segment-button value='sister'  class='ion-segment-button'>
+        清新小姐姐
+        </ion-segment-button>
+        <ion-segment-button value='JK'  class='ion-segment-button'>
+        JK制服
+        </ion-segment-button>
+    </ion-segment>
+</div>

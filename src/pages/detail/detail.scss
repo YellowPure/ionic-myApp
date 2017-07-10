@@ -1,0 +1,62 @@
+page-detail {
+    background-color: #fff;
+    ion-header {
+        .has-header {
+            // top: 0;
+            &>div {
+                background-color: transparent;
+                border-width: 0px!important;
+            }
+        }
+    }
+    .content {
+        
+        .content-head {
+            border-bottom: 1px solid #f00;
+            margin-bottom: 20px;
+            background-color: #fff;
+            .content-head-box {
+                .content-head-box-main {
+                    background: url(http://dummyimage.com/120x60) 0 0 no-repeat;
+                    background-size: 100% 250px;
+                    padding-top: 200px;
+                    
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+                .img-box {
+                    width: 100px;
+                    height: 100px;
+                    margin: 0 10px;
+                    img {
+                        border: 1px solid goldenrod;
+                        border-radius: 50%;
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                    }
+                }
+                .info-box {
+                    margin-top: 50px;
+                    flex: 1;
+                    flex-direction: row;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    span {
+                        flex: 1;
+                    }
+                }
+            }
+            .content-main-box {
+
+            }
+            
+        }
+    }
+    ion-list {
+        background-color: #fff;
+    }
+}

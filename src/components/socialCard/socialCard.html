@@ -1,0 +1,23 @@
+<ion-card class='card-girl'>
+    <ion-item>
+    <ion-avatar item-start>
+        <img src='http://7xq7s7.com2.z0.glb.qiniucdn.com/0e650f4d70fa7366b0f8a06a470d644f.jpg?imageMogr2/thumbnail/300x300/interlace/1&e=1498725249&token=3cYRoEh67hh3wAsX6ex9FXqk1fT8heJvl43iffYt:ttJJaxHvO9yxgolGz5v77JDHdRw='>
+    </ion-avatar>
+    <h2>{{type}}原来是系公举殿下</h2>
+    <p>52分钟前 阅读1.2k</p>
+    </ion-item>
+    <ion-list class='card-list'>
+    <div class='card-item' *ngFor='let item of items' (tap)='toPreview($event)'>
+        <img src='{{item}}'>
+    </div>
+    </ion-list>
+    <ion-card-content>
+    <p>[小视频]三碗粉感谢福利 <br /> 第一次尝试野外露出</p>
+    <ion-item>
+        <ion-badge>编辑推荐</ion-badge>
+        <ion-badge>独家</ion-badge>
+        <ion-badge>原创</ion-badge>
+        <ion-badge>可下载</ion-badge>
+    </ion-item>
+    </ion-card-content>
+</ion-card>

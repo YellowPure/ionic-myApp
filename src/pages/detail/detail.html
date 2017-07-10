@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar class='has-header'>
+        <ion-title>个人主页</ion-title>
+        <ion-buttons end>
+            <button>
+                <ion-icon name='more' (tap)='more($event)'></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class='content'>
+    <div class='content-head'>
+        <div class="content-head-box">
+            <div class='content-head-box-main'>
+                <div class='img-box'>
+                    <img src='http://dummyimage.com/120x60' />
+                </div>
+                <div class='info-box'>
+                    <span>13 <br /> 作品</span>
+                    <span>13 <br /> 作品</span>
+                    <span>13 <br /> 作品</span>
+                </div>
+            </div>
+        </div>
+        <div class='content-main-box'>
+            <ion-item>
+                <p>张婉茹。</p>
+            </ion-item>
+            <ion-item>
+                <p>犯错了，换了个号</p>
+            </ion-item>
+            <p padding-left='20'>
+                <button ion-button round color='light' (tap)='getPhone($event)'>联系方式</button>
+                <button ion-button round color='secondary' (tap)='follow($event)'>{{isFollow == true ? '取消关注': '关注'}}</button>
+            </p>
+        </div>
+    </div>
+    <ion-list>
+        <social-card [type]='1'></social-card>
+        <social-card [type]='1'></social-card>
+    </ion-list>
+</ion-content>

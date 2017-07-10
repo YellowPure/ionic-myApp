@@ -1,0 +1,17 @@
+social-card {
+    .card-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: space-between;
+        .card-item {
+            padding: 0;
+            width: 33%;
+        }
+    }
+    .card-item {
+        img {
+            height: 106px;
+        }
+    }
+}

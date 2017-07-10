@@ -1,0 +1,12 @@
+category-list {
+    .tabs-wrap {
+        width: 100%;
+        overflow: auto;
+        .ion-segment-button {
+            width: 20%;
+        }
+    }
+    .tabs-box {
+        width: 120%;
+    }
+}

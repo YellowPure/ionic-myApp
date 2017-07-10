@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar (tap)="toSearch($event)"></ion-searchbar>
+
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (tap)='toLogin($event)'>
+        <ion-icon name='bookmark'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  <category-list (changeSegment)='changeSegment($event)'></category-list>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)='doRefresh($event)'>
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+
+    </ion-refresher-content>
+  </ion-refresher>
+  <div [ngSwitch]='lookType'>
+    <div *ngSwitchCase='"lookin"'>
+      <head-list></head-list>
+      <ion-list>
+          <social-card [type]='0'></social-card>
+          <social-card [type]='0'></social-card>
+          <social-card [type]='0'></social-card>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase='"owned"'>
+      <ion-list>
+          <social-card [type]='1'></social-card>
+          <social-card [type]='1'></social-card>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase='"recommend"'>
+      <head-list></head-list>
+      <ion-list>
+          <social-card [type]='2'></social-card>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase='"newer"'>
+
+    </div>
+    <div *ngSwitchCase='"sister"'>
+
+    </div>
+    <div *ngSwitchCase='"JK"'>
+
+    </div>
+  </div>
+  <!-- 上拉加载-->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

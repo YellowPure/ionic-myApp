@@ -1,0 +1,81 @@
+ <ion-header>
+    <ion-toolbar>
+        <ion-searchbar
+            placeholder="搜索作品、用户与频道"
+            (ionInput)='getItems($event)'
+        >
+        </ion-searchbar>
+        <ion-buttons end>
+            <button ion-button (tap)='pop($event)'>取消</button>
+        </ion-buttons>
+    </ion-toolbar>
+ </ion-header>
+ <ion-content>
+     <ion-segment class='tabs-box' [(ngModel)]='resultType'  (ionChange)="segmentChanged($event)">
+        <ion-segment-button value='1' class='ion-segment-button' isActive>
+        作品
+        </ion-segment-button>
+        <ion-segment-button value='2'  class='ion-segment-button'>
+        用户
+        </ion-segment-button>
+        <ion-segment-button value='3'  class='ion-segment-button'>
+        频道
+        </ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]='resultType'>
+        <div *ngSwitchCase='"1"'>
+            <ion-list>
+                <social-card [type]='0' *ngFor='let i of works'></social-card>
+            </ion-list>
+            <!--上拉加载-->
+            <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+                <ion-infinite-scroll-content
+                loadingSpinner="bubbles"
+                loadingText="Loading more data...">
+                </ion-infinite-scroll-content>
+            </ion-infinite-scroll>
+        </div>
+        <div *ngSwitchCase='"2"'>
+            <ion-list class='users'>
+                <ion-item *ngFor='let item of users'>
+                    <img src='{{item.img}}' />
+                    <div class='item-text-center'>{{item.name}}</div>
+                    <ion-buttons  item-end>
+                    <button ion-button icon-only>
+                        <ion-icon name="person-add"></ion-icon>
+                    </button>
+                    </ion-buttons>
+                </ion-item>
+            </ion-list>
+            <!--上拉加载-->
+            <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+                <ion-infinite-scroll-content
+                loadingSpinner="bubbles"
+                loadingText="Loading more data...">
+                </ion-infinite-scroll-content>
+            </ion-infinite-scroll>
+        </div>
+        <div *ngSwitchCase='"3"'>
+            <ion-list>
+                <ion-item *ngFor='let item of channels'>
+                    <ion-row align-items-center>
+                        <ion-col col-9>
+                        <span>{{item.name}}</span>
+                        <span>(订阅人数：{{item.num}})</span>
+                        </ion-col>
+                        <ion-col>
+                            <span ion-button text-right (tap)='toShare($event)'>订阅</span>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+            </ion-list>
+            <!--上拉加载-->
+            <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+                <ion-infinite-scroll-content
+                loadingSpinner="bubbles"
+                loadingText="Loading more data...">
+                </ion-infinite-scroll-content>
+            </ion-infinite-scroll>
+        </div>
+    </div>
+ </ion-content>

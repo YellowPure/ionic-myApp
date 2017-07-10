@@ -1,0 +1,14 @@
+head-list {
+    .head-boxs {
+        width: 100%;
+        display: flex;
+        .head-scroll {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            display: flex;
+            .head-box {
+                display: inline-block;
+            }
+        }
+    }
+}
