@@ -9,9 +9,44 @@ social-card {
             width: 33%;
         }
     }
+    ion-avatar {
+        img {
+            width: 48px!important;
+            height: 48px!important;
+        }
+    }
     .card-item {
         img {
             height: 106px;
         }
     }
+    .card-head {
+        h2 {
+            margin-top: 5px!important;
+        }
+    }
+    ion-badge {
+        background-color: #fff!important;
+        color: #ff467d!important;
+        font-weight: normal;
+        border:1px solid #ff467d!important;
+        margin-right: 3px;
+    }
+    ion-row.btn-list {
+        margin-top: 10px;
+        border-top: 1px solid #ddd;
+        min-height: 50px;
+        font-size: 16px;
+    }
+    ion-card-content{
+        padding-bottom: 0px!important;
+    }
+    .hold-on {
+        color: #ff467d;
+    }
 }
+.need-recharge {
+    .toast-wrapper {
+        background: #f53d3d!important;
+    }
+} 

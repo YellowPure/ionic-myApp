@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 
 // pages
@@ -14,10 +15,12 @@ import { Protocol } from '../pages/protocol/protocol';
 import { Detail } from '../pages/detail/detail';
 import { Preview } from '../pages/preview/preview';
 import { Search } from '../pages/search/search';
+import { CommentPage } from '../pages/comment/comment';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentModule } from '../components/components.module';
+
 
 @NgModule({
   declarations: [
@@ -31,14 +34,16 @@ import { ComponentModule } from '../components/components.module';
     Protocol,
     Detail,
     Preview,
-    Search
+    Search,
+    CommentPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: true
     }),
-    ComponentModule
+    ComponentModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -52,7 +57,8 @@ import { ComponentModule } from '../components/components.module';
     Protocol, // 用户协议
     Detail, // 个人主页
     Preview,
-    Search
+    Search,
+    CommentPage
   ],
   providers: [
     StatusBar,
