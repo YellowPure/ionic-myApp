@@ -20,6 +20,7 @@ import { CommentPage } from '../pages/comment/comment';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentModule } from '../components/components.module';
+import { SuperTabsModule } from 'ionic2-super-tabs';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { ComponentModule } from '../components/components.module';
       tabsHideOnSubPages: true
     }),
     ComponentModule,
+    SuperTabsModule.forRoot(),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],

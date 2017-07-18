@@ -4,11 +4,14 @@
 
     <ion-buttons end>
       <button ion-button icon-only color="royal" (tap)='toLogin($event)'>
-        <ion-icon name='bookmark'></ion-icon>
+        <ion-icon name='pricetag'></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
-  <category-list (changeSegment)='changeSegment($event)'></category-list>
+  <super-tabs>
+    <super-tab [root]='search' title='first-page'></super-tab>
+  </super-tabs>
+  <!-- <category-list (changeSegment)='changeSegment($event)'></category-list> -->
 </ion-header>
 
 <ion-content padding>

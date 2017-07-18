@@ -2,5 +2,11 @@ page-home {
     .card {
         
     }
-    
+    ion-icon[name='pricetag'] {
+        transform: rotate(-90deg);
+        color: #fff;
+    }
+    .toolbar-background {/* Background Gradient for Analagous Colors */
+        background: linear-gradient(to right, rgb(255, 182, 193), rgb(250, 109, 178));
+    }
 }
