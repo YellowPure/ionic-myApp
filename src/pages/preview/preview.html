@@ -4,20 +4,25 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding (tap)='showOrhide($event)' [ngClass]='showAll == false ? "ishide": "isshow"'>
-    <div class='preview-box' *ngIf="type=='1'" [ngClass]='allow == false ? "blur" : ""'>
-        <img src="http://dummyimage.com/250x250"  [ngClass]='allow == false ? "blur" : ""'/>
-        <ion-row *ngIf='allow == false' text-center align-items-center justify-content-center class='blur' >
-            <p>购买浏览全部</p>
-            <button ion-button outline color='light' (tap)='alertBuy($event)'>399金币</button>
-        </ion-row>
-    </div>
-    <div *ngIf="type=='2'" class='preview-box'  [ngClass]='allow == false ? "blur" : ""'>
-        <video poster="http://dummyimage.com/250x250"  controls="controls"  preload="auto" webkit-playsinline="webkit-playsinline" class="videoPlayer">
-            <source src="https://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4" type="video/mp4"/>
-        </video>
-        <ion-row *ngIf='allow == false' text-center align-items-center justify-content-center class='blur' >
-            <p>购买浏览全部</p>
-            <button ion-button outline color='light' (tap)='alertBuy($event)'>399金币</button>
-        </ion-row>
-    </div>
+    <ion-slides>
+         <ion-slide *ngFor='let item of items'>
+            <div class='preview-box' *ngIf="type=='1'" [ngClass]='allow == false ? "blur" : ""'>
+                <img src="http://dummyimage.com/250x250"  [ngClass]='allow == false ? "blur" : ""'/>
+                <ion-row *ngIf='allow == false' text-center align-items-center justify-content-center class='blur' >
+                    <p>购买浏览全部</p>
+                    <button ion-button outline color='light' (tap)='alertBuy($event)'>399金币</button>
+                </ion-row>
+            </div>
+            <div *ngIf="type=='2'" class='preview-box'  [ngClass]='allow == false ? "blur" : ""'>
+                <video poster="http://dummyimage.com/250x250"  controls="controls"  preload="auto" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+                    <source src="https://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4" type="video/mp4"/>
+                </video>
+                <ion-row *ngIf='allow == false' text-center align-items-center justify-content-center class='blur' >
+                    <p>购买浏览全部</p>
+                    <button ion-button outline color='light' (tap)='alertBuy($event)'>399金币</button>
+                </ion-row>
+            </div>
+        </ion-slide> 
+    </ion-slides>
+    
 </ion-content>

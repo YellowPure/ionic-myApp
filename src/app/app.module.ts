@@ -16,6 +16,7 @@ import { Detail } from '../pages/detail/detail';
 import { Preview } from '../pages/preview/preview';
 import { Search } from '../pages/search/search';
 import { CommentPage } from '../pages/comment/comment';
+import { WaterfallPage } from '../pages/waterfall/waterfall';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -36,7 +37,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     Detail,
     Preview,
     Search,
-    CommentPage
+    CommentPage,
+    WaterfallPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     Detail, // 个人主页
     Preview,
     Search,
-    CommentPage
+    CommentPage,
+    WaterfallPage
   ],
   providers: [
     StatusBar,

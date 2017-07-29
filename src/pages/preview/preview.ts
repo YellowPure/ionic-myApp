@@ -12,6 +12,7 @@ export class Preview {
     type: any;
     allow: boolean;
     showAll: boolean; // 
+    items: any;
 
     constructor(public navParams: NavParams, public alertCtrl: AlertController, public toastCtrl: ToastController) {
         const type = this.navParams.get('type');
@@ -20,6 +21,7 @@ export class Preview {
         // 是否允许查看
         this.allow = this.navParams.get('allow');
         this.showAll = true;
+        this.items = Array.from({length: 10});
     }
 
     ngOnInit() {

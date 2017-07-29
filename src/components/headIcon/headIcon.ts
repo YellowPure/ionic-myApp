@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, App } from 'ionic-angular';
 import { Detail } from '../../pages/detail/detail';
 
 @Component({
@@ -12,7 +12,11 @@ export class HeadIcon {
 
     @Input()
     src: string;
-    constructor(public navCtrl: NavController) {
+
+    nav: any;
+
+    constructor(public navCtrl: NavController, public appCtrl: App) {
+        this.nav = this.appCtrl.getRootNav();
     }
 
     ngOnInit() {
@@ -20,6 +24,6 @@ export class HeadIcon {
     }
 
     toDetail() {
-        this.navCtrl.push(Detail);
+        this.nav.push(Detail);
     }
 }

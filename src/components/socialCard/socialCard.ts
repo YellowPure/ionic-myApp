@@ -1,12 +1,15 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
+import { Nav } from 'ionic-angular';
 import { 
     NavController,
     ActionSheetController,
     AlertController,
-    ToastController
+    ToastController,
+    App
 } from 'ionic-angular';
 import { Preview } from '../../pages/preview/preview';
 import { CommentPage } from '../../pages/comment/comment';
+import { TabsPage } from '../../pages/tabs/tabs';
 
 import Mock from 'mockjs';
 
@@ -18,7 +21,6 @@ export class SocialCard {
     public items = [];
     @Input()
     type: number;
-    
     src1: string = 'http://dummyimage.com/120x60';
     src2: string = 'http://dummyimage.com/120x60';
     src3: string = 'http://dummyimage.com/120x60';
@@ -26,14 +28,16 @@ export class SocialCard {
     avator: string;
     islike: boolean = false;
     likeIcon: string = 'thumbs-up-outline';
+    nav: any;
 
     constructor(
-        public navCtrl: NavController,
         public actionSheetCtrl: ActionSheetController,
         public alertCtrl: AlertController,
-        public toastCtrl: ToastController
+        public toastCtrl: ToastController,
+        public appCtrl: App
     ) {
         this.avator = Mock.mock({'img': '@image'}).img;
+        this.nav = this.appCtrl.getRootNav();
     }
 
     ngOnInit() {
@@ -50,7 +54,7 @@ export class SocialCard {
     toPreview() {
         let ran = Math.random() > .5 ? 2 : 1;
         // console.log(ran);
-        this.navCtrl.push(Preview, {
+        this.nav.push(Preview, {
             type: ran,
             allow: ran == 1 ? false : true
         });
@@ -126,7 +130,7 @@ export class SocialCard {
 
     // 去评论页
     toComment() {
-        this.navCtrl.push(CommentPage, {
+        this.nav.push(CommentPage, {
 
         });
     }

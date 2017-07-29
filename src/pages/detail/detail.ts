@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ActionSheetController, LoadingController, ToastController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { AlertController, ActionSheetController, LoadingController, ToastController, Header } from 'ionic-angular';
 
 @Component({
     templateUrl: 'detail.html',
@@ -10,7 +10,10 @@ import { ActionSheetController, LoadingController, ToastController } from 'ionic
  */
 export class Detail {
     isFollow: boolean =  false;
-    constructor(public actionSheetCtrl: ActionSheetController, public loadingCtrl: LoadingController, public toastCtrl: ToastController) {
+
+    @ViewChild(Header) header:Header;
+
+    constructor(public aletCtrl: AlertController, public actionSheetCtrl: ActionSheetController, public loadingCtrl: LoadingController, public toastCtrl: ToastController) {
 
     }
 
@@ -43,7 +46,26 @@ export class Detail {
     }
 
     getPhone() {
+        let alert = this.aletCtrl.create({
+            title: '联系方式',
+            cssClass: 'phone',
+            message: '<a href="//baidu.com">baidu</a>',
+            buttons: [
+                {
+                    text: '不了',
+                    handler: () => {
 
+                    }
+                },
+                {
+                    text: '689金币',
+                    handler: () => {
+                        
+                    }
+                }
+            ]
+        });
+        alert.present();
     }
 
     presentLoading() {

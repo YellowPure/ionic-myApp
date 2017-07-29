@@ -4,13 +4,22 @@ page-detail {
         .has-header {
             // top: 0;
             &>div {
-                background-color: transparent;
+                background: transparent;
                 border-width: 0px!important;
+            }
+        }
+        .has-bg {
+            &>div {
+                background: linear-gradient(to right, rgb(255, 182, 193), rgb(250, 109, 178))!important;
+                transition: 2s;
             }
         }
     }
     .content {
-        
+        .scroll-content {
+            margin-top: 0px !important;
+            padding-top: 0px !important;
+        }
         .content-head {
             border-bottom: 1px solid #f00;
             margin-bottom: 20px;
@@ -58,5 +67,12 @@ page-detail {
     }
     ion-list {
         background-color: #fff;
+    }
+    // dialog getphone
+}
+
+.phone {
+    #alert-hdr-0 {
+        color: mediumvioletred;
     }
 }
