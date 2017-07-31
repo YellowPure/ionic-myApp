@@ -20,5 +20,18 @@ page-usecenter {
             }
         }
     }
+    .toolbar-background {/* Background Gradient for Analagous Colors */
+        background: linear-gradient(to right, rgb(255, 182, 193), rgb(250, 109, 178));
+    }
+    .toolbar-title{
+        color: #fff;
+        font-weight: normal;
+    }
+    .login-btn {
+        border-color: #999;
+        color: #999;
+        padding: 0 3em;
+        height: 2.4em;
+    }
 }
 

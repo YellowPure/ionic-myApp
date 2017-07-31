@@ -2,28 +2,33 @@
     <ion-toolbar>
         <ion-buttons>
             <button ion-button (tap)='cancel()'>
-                <span ion-text color='primary'>取消</span>
+                <ion-icon name='arrow-back'></ion-icon>
+                <!-- <span ion-text color='primary'>取消</span> -->
             </button>
         </ion-buttons>
+        <ion-title text-left>
+            登录
+        </ion-title>
     </ion-toolbar>
 </ion-header>
 <ion-content>
     <form>
-        <ion-item>
+        <ion-item class='input-name'>
             <ion-input text='number' class='input-phone' placeholder='输入手机号'>
             </ion-input>
-            <ion-badge item-end (tap)='getSms($event)'>获取验证码</ion-badge>
+            <ion-badge class='sms' item-end (tap)='getSms($event)'>获取验证码</ion-badge>
         </ion-item>
-        <ion-item>
-            <ion-input text='number' placeholder='输入短信验证码'></ion-input>
+        <ion-item class='input-password'>
+            <ion-input text='number' placeholder='用户验证码'></ion-input>
         </ion-item>
-        <p text-right>
-            <span (tap)='toProtocol()'>登录即同意《用户协议》</span>
+        <p text-right class='protocol'>
+            <span (tap)='toProtocol()'>注册即视为同意PR社的 <span class='strong'>用户协议</span></span>
         </p>
-        <ion-buttons>
-            <button ion-button text-center block>
+        <div class='submit'>
+            <button ion-button block text-center>
                 <span ion-text>登录</span>
             </button>
-        </ion-buttons>
+
+        </div>
     </form>
 </ion-content>

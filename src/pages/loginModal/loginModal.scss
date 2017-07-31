@@ -8,4 +8,30 @@ login-modal {
         top: 0;
         color: #f00;
     }
+    .toolbar-title{
+        color: #fff;
+        font-weight: normal;
+    }
+    .content, .toolbar-background, .input-name, .input-password {
+        background: linear-gradient(to right, rgb(255, 182, 193), rgb(250, 109, 178));
+    }
+    .sms {
+        background: transparent;
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+    .protocol {
+        padding-right: 1em;
+        color: #666;
+        .strong {
+            color: #fff;
+        }
+    }
+    .submit {
+        margin: 0 1em;
+        .button {
+            background: #fff;
+            color: magenta;
+        }
+    }
 }

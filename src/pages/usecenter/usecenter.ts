@@ -6,7 +6,7 @@ import { LoginModal } from '../loginModal/loginModal';
   templateUrl: 'usecenter.html'
 })
 export class UsecenterPage {
-
+  isLogin: boolean = false;
   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
 
   }

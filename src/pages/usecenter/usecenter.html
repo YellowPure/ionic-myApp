@@ -1,9 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>个人中心</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content class='main'>
-  <div class='content'>
+  <div *ngIf='!isLogin' class='content'>
     <div class='img-box'>
       <img src='http://dummyimage.com/120x60'>
     </div>
-    <p>登录享受更多功能</p>
-    <button ion-button (tap)='toLogin($event)' round outline>登录</button>
+    <p>登录后你的个人主页会展示在这里</p>
+    <button ion-button (tap)='toLogin($event)' outline class='login-btn'>登录</button>
   </div>
 </ion-content>
