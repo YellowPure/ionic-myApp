@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { AlertController, ActionSheetController, LoadingController, ToastController, Header } from 'ionic-angular';
 
 @Component({
@@ -10,10 +10,16 @@ import { AlertController, ActionSheetController, LoadingController, ToastControl
  */
 export class Detail {
     isFollow: boolean =  false;
-
+    showHeaderBg: boolean = false;
     @ViewChild(Header) header:Header;
 
-    constructor(public aletCtrl: AlertController, public actionSheetCtrl: ActionSheetController, public loadingCtrl: LoadingController, public toastCtrl: ToastController) {
+    constructor(
+        public aletCtrl: AlertController,
+        public actionSheetCtrl: ActionSheetController,
+        public loadingCtrl: LoadingController,
+        public toastCtrl: ToastController,
+        private cd: ChangeDetectorRef
+    ) {
 
     }
 
@@ -45,6 +51,22 @@ export class Detail {
         actionSheet.present();
     }
 
+    ionScroll(item) {
+        if(item.scrollTop > this.header._elementRef.nativeElement.offsetHeight) {
+            if(this.showHeaderBg != true) {
+                this.showHeaderBg = !this.showHeaderBg;
+                // 强制刷新
+                this.cd.detectChanges();
+            }
+        } else {
+            if(this.showHeaderBg != false) {
+                this.showHeaderBg = !this.showHeaderBg;
+                // 强制刷新
+                this.cd.detectChanges();
+            }
+        }
+    }
+
     getPhone() {
         let alert = this.aletCtrl.create({
             title: '联系方式',
@@ -65,6 +87,7 @@ export class Detail {
                 }
             ]
         });
+
         alert.present();
     }
 

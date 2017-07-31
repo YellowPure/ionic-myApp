@@ -7,7 +7,21 @@
 </ion-header>
 
 <ion-content class='main'>
-  <div class='content'>
+  <div *ngIf='isLogin'>
+    <ion-list>
+      <ion-item *ngFor='let item of list'>
+        <div (tap)='toPicList(item)'>
+          <img src='{{item.src}}'>
+          <span>{{item.name}}</span>
+          <div>
+            <span>{{item.num}}</span>
+          </div>
+
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf='!isLogin' class='content'>
     <div class='img-box'>
       <img src='http://dummyimage.com/120x60'>
     </div>

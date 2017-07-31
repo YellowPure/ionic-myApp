@@ -22,6 +22,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentModule } from '../components/components.module';
 import { SuperTabsModule } from 'ionic2-super-tabs';
+import { LoginServiceProvider } from '../providers/login-service/login-service';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LoginServiceProvider
   ]
 })
 export class AppModule {}

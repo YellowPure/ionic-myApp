@@ -1,14 +1,14 @@
 <ion-header #header>
-    <ion-navbar class='has-header'>
+    <ion-navbar [ngClass]='showHeaderBg? "has-bg has-header": "has-header"'>
         <ion-title>个人主页</ion-title>
-        <ion-buttons end>
-            <button>
-                <ion-icon name='more' (tap)='more($event)'></ion-icon>
+        <ion-buttons end >
+            <button icon-only ion-button (tap)='more($event)' clear>
+                <ion-icon name='more'></ion-icon>
             </button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
-<ion-content class='content' fullscreen='true'>
+<ion-content class='content' fullscreen='true' (ionScroll)='ionScroll($event)'>
     <div class='content-head'>
         <div class="content-head-box">
             <div class='content-head-box-main'>
@@ -16,17 +16,27 @@
                     <img src='http://dummyimage.com/120x60' />
                 </div>
                 <div class='info-box'>
-                    <span>13 <br /> 作品</span>
-                    <span>13 <br /> 作品</span>
-                    <span>13 <br /> 作品</span>
+                    <div>
+                        <span>13</span>
+                         <br />
+                        <span>作品</span>
+                    </div>
+                    <div>
+                        <span>13</span>
+                         <br />
+                        <span>粉丝</span>
+                    </div>
+                    <div>
+                        <span>13</span>
+                         <br />
+                        <span>关注</span>
+                    </div>
                 </div>
             </div>
         </div>
         <div class='content-main-box'>
             <ion-item>
                 <p>张婉茹。</p>
-            </ion-item>
-            <ion-item>
                 <p>犯错了，换了个号</p>
             </ion-item>
             <p padding-left='20'>

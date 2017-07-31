@@ -1,21 +1,27 @@
 page-detail {
-    background-color: #fff;
     ion-header {
         .has-header {
             // top: 0;
             &>div {
                 background: transparent;
                 border-width: 0px!important;
+                transition:all .5s linear;
             }
         }
         .has-bg {
             &>div {
-                background: linear-gradient(to right, rgb(255, 182, 193), rgb(250, 109, 178))!important;
-                transition: 2s;
+                background: rgb(250, 109, 178);
             }
+        }
+        .button-inner, .toolbar-title {
+            color: #fff!important;
+        }
+        .toolbar-title {
+            font-weight: normal;
         }
     }
     .content {
+        background-color: #eee!important;
         .scroll-content {
             margin-top: 0px !important;
             padding-top: 0px !important;
@@ -54,8 +60,11 @@ page-detail {
                     justify-content: center;
                     align-items: center;
                     text-align: center;
-                    span {
+                    &>div {
                         flex: 1;
+                        span:nth-child(1) {
+                            color: rgb(250, 109, 178);
+                        }
                     }
                 }
             }
