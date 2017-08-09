@@ -27,4 +27,35 @@ page-collect {
         color: #fff;
         font-weight: normal;
     }
+    .logined-collect {
+        width: 100%;
+    }
+    .collect-list {
+        padding-top: 14px;
+        &>div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #666;
+            .left-box{
+                display: flex;
+                align-items: center;
+                padding: 10px 0 10px 10px;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+            }
+            .right-box {
+                margin-right: 10px;
+                font-size: 16px;
+                span {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+            }
+        }
+    }
 }

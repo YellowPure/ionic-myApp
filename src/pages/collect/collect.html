@@ -7,18 +7,18 @@
 </ion-header>
 
 <ion-content class='main'>
-  <div *ngIf='isLogin'>
-    <ion-list>
-      <ion-item *ngFor='let item of list'>
-        <div (tap)='toPicList(item)'>
+  <div *ngIf='isLogin' class='logined-collect'>
+    <ion-list class='collect-list'>
+      <div *ngFor='let item of list'>
+        <div class='left-box'>
           <img src='{{item.src}}'>
           <span>{{item.name}}</span>
-          <div>
-            <span>{{item.num}}</span>
-          </div>
-
         </div>
-      </ion-item>
+        <div class='right-box'>
+          <span>{{item.num}}</span>
+          <ion-icon name='arrow-forward'></ion-icon>
+        </div>
+      </div>
     </ion-list>
   </div>
   <div *ngIf='!isLogin' class='content'>
